@@ -1,0 +1,12 @@
+Claim
+I fix AI agents that are confidently wrong by rewriting what they're told to do, not by touching the model.
+Proof
+I built an agent to compare automation templates against their documentation and flag mismatches. Early versions hallucinated issues that didn't exist. I traced why, revised its instructions across several rounds, and got its flags to match manual review — real outdated product names, real typos, real contradictions.
+Method
+My process is always the same: get enough domain knowledge of the system to know what "correct" actually looks like, run the agent, compare its output against that ground truth, and treat every gap — an invented issue, a missed issue, a misread source — as evidence the instructions are ambiguous somewhere. I trace the specific ambiguity, rewrite that part of the instructions, and re-test. I repeat until the agent's output holds up against manual review. The debugging loop is the same regardless of domain; what changes is how much time I spend upfront understanding what "correct" means in that system.
+Broadening
+This applies anywhere you can learn a system well enough to define what its correct output looks like, then compare an agent's behavior against it — support responses vs policy docs, code review vs style guides, data extraction vs source records. The method is the same: understand the domain, define ground truth, find where the agent drifts, fix the instructions, re-test.
+Who it's for
+The person at a small AI team who shipped an agent recently and is now quietly not fully trusting its output.
+Action
+They read this, see the before/after, and email me directly to talk.
