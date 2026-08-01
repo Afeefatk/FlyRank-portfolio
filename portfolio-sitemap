@@ -1,0 +1,43 @@
+Pressure test prompt
+
+Please find my proof statement in the Instructions
+Below is my sitemap:
+Home: my proof statement and who I help
+Work: one case study showing my claim in action and how i help achieve the goal
+About: my real story of switching into this field
+Contact: the one action, email to know more about me
+Does this sitemap walk my one person from landing, to believing me, to taking my one action, and does it actually prove my claim? Tell me which pages earn their place, which are wasted, and what is missing. Be specific, not encouraging.
+
+
+
+
+Output
+
+
+Here's the walk-through, page by page.
+
+**Home — earns its place, but only if it does one specific job it might not be doing.**
+The description says "proof statement and who I help." That's not enough on its own — a proof *statement* is just a claim restated with confidence. What actually earns trust in five seconds is a number or an artifact, not a sentence. If Home just says "I fix AI agents that are confidently wrong by rewriting instructions, not the model" and then describes who you help, you've told them your thesis but given them zero reason yet to believe it. The job of Home isn't to prove anything — it's to make the claim specific enough and the pain recognizable enough that they click into Work to get the proof. Make sure Home names the *symptom* they'll recognize ("your agent flags problems that aren't there, or misses ones that are") before it names your method. Right now it reads like it might lead with your method instead of their pain.
+
+**Work — earns its place, and it's the load-bearing page, but one case study is thin and possibly the wrong shape of proof.**
+Two problems here, not one.
+
+First: a single example is fragile evidence for a hiring decision. It reads as "I did this once" rather than "this is a method I can apply to your mess." Nothing in the sitemap bridges from this one project to a repeatable process. A skeptical hiring manager's next question after reading the case study is "okay, but what do you actually *do* — what's the diagnostic process?" That question currently has no page to land on.
+
+Second, and more important: check whether your case study is actually an "agent" in the sense your hiring manager pictures. "Compare templates against documentation and flag mismatches" sounds like it could be a single-pass classification task rather than a multi-step, tool-using, stateful agent — which is what a consultancy building "agents/products for clients" is actually worried about breaking. If your case study doesn't visibly involve the kind of complexity (tool calls, multi-turn state, chained reasoning) that makes an agent "confidently wrong" in the way their systems are, the proof won't transfer in their head, no matter how good the before/after is. This needs to be addressed head-on on the Work page, not left for them to infer.
+
+Also — does Work actually show the before/after artifacts (the flawed instruction text, the revised instruction text, a sample hallucinated flag vs. the corrected one, the match-rate against manual review), or does it narrate that these things happened? A hiring manager evaluating "can this person be handed a messy system" wants to see the actual diff, not a description of a diff. If the page is narrative-only, it's not proof, it's a testimonial you're giving yourself.
+
+**About — does not clearly earn its place as described.**
+"My real story of switching into this field" is a narrative page, and narrative pages serve trust-building for personal brands, not capability-buying decisions. Your buyer isn't hiring your journey, they're hiring your judgment. Worse: if you're a career switcher, a page that foregrounds that fact right before the one page where they decide to email you can *introduce* doubt ("how much has this person actually debugged?") instead of resolving it, unless the story is specifically framed around how the switch built the exact diagnostic skill in your claim. As written, this page risks being a detour — interesting, not persuasive, and not on the path from landing to action. If you keep it, it needs to do double duty as evidence of method, not just biography. If it can't do that, cut it or fold a tight, credibility-relevant paragraph into Work/Home instead and drop the page.
+
+**Contact — earns its place, but the copy direction is backwards.**
+"Email to know more about me" frames the action around satisfying their curiosity about you. That's not the action you want. The action you want is them describing *their* broken system. Reframe the CTA around their problem: something like "send me what your agent is getting wrong" — action copy that matches the claim (hand me the mess) rather than generic "get in touch" framing.
+
+**What's missing:**
+
+1. A process/methodology beat. You have proof of one outcome and no explanation of the repeatable method that makes it generalizable. This is the single biggest gap — it's what turns "he fixed one thing once" into "he has a method I can trust on my system."
+2. A second, smaller proof point or at least a named scope of problem types you handle. One case study plus a stated range ("this applies to grounding failures, false-positive flags, contradiction detection, tool-call misfires — not just doc comparison") does more work than the story alone.
+3. Nothing addresses why instruction-rewriting (vs. fine-tuning, vs. swapping models) is the right lever — that's actually half your claim and currently only asserted, never argued or evidenced separately from the one case.
+
+**Bottom line:** the shape of the funnel (Home → Work → Contact, with Action singular) is right — that discipline is good. But as scoped, it proves "I did one instruction-rewriting fix once" more than it proves "I can be handed your messy agent and make it work." Work needs to carry more evidence weight (actual artifacts, not narration) and needs to explicitly defend that the case study counts as an "agent" problem in the way your buyer means it. About is doing the least work of any page here and should either be cut or repurposed toward method/credibility rather than story. Contact's copy is pointed at the wrong noun.
