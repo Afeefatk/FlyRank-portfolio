@@ -1,0 +1,35 @@
+Workflow Audit: AI Delegation Strategy
+Support Engineering — Jira, Splunk, connector/ODBC logs, HAR/crash dump analysis, community & KB content
+
+1. Recurring Task Classification
+Recurring Task	Classification	Rationale
+Jira ticket triage & prioritization	Collaborate with AI	AI drafts a priority/summary from ticket text, but final call needs product context and business judgment I hold.
+Live troubleshooting (issue diagnosis)	Collaborate with AI	AI proposes fast hypotheses from symptoms; I validate against real system behavior and customer environment.
+Splunk analysis (query building & correlation)	Collaborate with AI	AI drafts/optimizes SPL and spots patterns quickly, but I confirm results against domain knowledge.
+Connector / ODBC driver log analysis	Collaborate with AI	Dense, ambiguous logs benefit from AI pattern-matching, but root-cause calls still need my judgment.
+HAR file analysis	Delegate to AI, review	Structured JSON is easy for AI to parse and summarize accurately; I only verify the flagged requests.
+Crash dump file analysis	Just me	Requires specialized debugger tools and deep stack-trace expertise AI can't safely substitute for.
+Community article writing	Delegate to AI, review	AI drafts clear explanatory content fast from a known fix; I edit for accuracy and voice.
+Knowledge base article creation/updates	Delegate to AI, review	High-volume writing task with clear source material (the resolved ticket); AI drafts, I fact-check.
+Reproducing issues in test environment	Just me	Hands-on environment setup and observation — not a text or data task AI can perform.
+Writing ticket resolution summaries	Delegate to AI, review	Templated, low-risk writing; I proofread for technical accuracy before closing the ticket.
+Auditing existing KB articles for staleness	Delegate to AI, review	AI can scan and flag outdated/contradicted content far faster than a manual read-through.
+Drafting customer-facing email responses	Collaborate with AI	Tone and technical accuracy both matter, so I co-write rather than fully hand off.
+Researching vendor docs/release notes	Collaborate with AI	AI accelerates search and summarization; I verify claims against actual observed behavior.
+Weekly status/metrics reporting	Fully automate	Repetitive, template-driven, low-judgment — a scripted/AI pipeline can run end-to-end.
+Onboarding docs/runbooks for teammates	Delegate to AI, review	AI drafts structured guides from my raw notes; I review for completeness and gaps.
+
+2. Claude Project Setup
+Project name: Support Engineering Ops
+Custom instructions used:
+•  Who I am: Technical Support Engineer troubleshooting a data-connectivity product. My daily work spans Jira tickets, Splunk log correlation, connector/ODBC driver log analysis, HAR file review, crash dump triage, and writing community + knowledge base articles.
+•  Tone: concise and technical, no filler, assume an expert reader. Use tables/bullets for log findings. Flag any uncertainty or assumption explicitly rather than guessing silently.
+•  Current goals: (1) cut time-to-first-diagnosis on tickets, (2) stand up reusable KB/community article templates, (3) get faster, more reliable first-pass triage on HAR and log files so I only need to verify the flagged entries, not read the whole file.
+
+3. Three Reusable Audit Tasks — Success Definitions
+HAR File Analysis (Delegate to AI, review)
+"Done well" means: the AI correctly identifies failed and slow requests with exact status codes and timings, ties each finding back to a specific request entry (no invented detail), and I only need to double-check the top 2-3 flagged entries instead of reading the raw file myself.
+Knowledge Base Article Creation (Delegate to AI, review)
+"Done well" means: the draft matches the existing KB template/style, is scoped to one issue, contains no invented steps or unverified claims, and is publishable after a single accuracy/voice edit rather than a rewrite.
+Splunk Analysis (Collaborate with AI)
+"Done well" means: the AI-generated SPL query runs without syntax errors, the returned results match what I'd expect from a manual spot-check of the raw logs, and the AI explains its query logic clearly enough that I'm validating reasoning, not just trusting output.
